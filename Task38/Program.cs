@@ -36,21 +36,13 @@ double MinMaxDiff(double[] currentArray)
     double diff = 0;
     double max = currentArray[0];
     double min = currentArray[0];
-    int max_idx = 0;
-    int min_idx = 0;
+
     for (int i = 0; i < currentArray.Length; i++)
     {
-        if (currentArray[i] > max) 
-        {
-            max = currentArray[i];
-            max_idx = i;
-        }
-        if (currentArray[i] < min)
-        {
-            min = currentArray[i];
-            min_idx = i;
-        }
-        diff = currentArray[max_idx] - currentArray[min_idx];
+        if (currentArray[i] > max) max = currentArray[i];
+        else if (currentArray[i] < min) min = currentArray[i];
+
+        diff = max - min;
     }
     return diff;
 }
